@@ -1,5 +1,6 @@
 import os
-
+import cv2
+import sys
 from flask import Flask, render_template, send_file
 from flask_restful import Resource, Api
 
@@ -14,6 +15,8 @@ api = Api(app)
 #     def get(self):
 #         return {'hello': 'world1'}
 
+camera = cv2.VideoCapture(0)
+
 
 @app.route('/')
 def index():
@@ -24,6 +27,9 @@ def index():
 def resource(name=None):
     ext = os.path.splitext(name)[1]
     return send_file("resources/" + name, mimetype='image/%s' % ext)
+
+
+def video()
 
 
 
