@@ -1,14 +1,31 @@
-from flask import Flask
-from flask_restplus import Resource, Api
+import os
+
+from flask import Flask, render_template, send_file
+from flask_restful import Resource, Api
 
 app = Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+
 api = Api(app)
 
-@api.route('/hello')
-class HelloWorld(Resource):
-    def get(self):
-        return {'hello': 'world'}
+# @api.route('/hello')
+# class HelloWorld(Resource):
+#     def get(self):
+#         return {'hello': 'world1'}
+
+
+@app.route('/')
+def index():
+    return render_template('sanBerryStream.html')
+
+@app.route('/resources')
+@app.route('/resources/<name>')
+def resource(name=None):
+    ext = os.path.splitext(name)[1]
+    return send_file("resources/" + name, mimetype='image/%s' % ext)
+
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
