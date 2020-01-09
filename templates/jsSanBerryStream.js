@@ -1,28 +1,22 @@
-streaming = document.getElementsByClassName('.jsStreaming');
-status = document.getElementById('statusValue');
-btnStream = document.getElementsByClassName('jsStreamBtn');
-btnGetData = document.getElementsByClassName('jsGetDataBtn');
+streaming = document.querySelector('.jsStreaming');
+//status = document.getElementById('statusValue');
+btnStream = document.querySelector('.jsStreamBtn');
+btnGetData = document.querySelector('.jsGetDataBtn');
 
 function startStream() {
-    // fetch(
-    //     `/video_feed`
-    // ).then(function(response){
-    //     console.log(response);
-    //     return response.json();
-    // }).then(function(numRecords){
-    //     console.log(numRecords);
-    //     setNextPageNumberForImage(numRecords, n);
-    // });
     streaming.src = `/video_feed`;
-
+    console.log("startStream");
 }
 
-function nextPage(n) {
-
+function stopStream() {
+    streaming.src = "resources/image2.jpg";
+    console.log("stop Stream");
 }
+
 
 function init() {
     btnStream.addEventListener("click", startStream);
+    btnGetData.addEventListener("click", stopStream);
 }
 
 init();

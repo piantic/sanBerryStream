@@ -11,34 +11,32 @@
     </style>
 </head>
 <body>
-<div class="mx-auto my-5" align="center">
-    <h1>
-        <p class="h1"> SanBerry - Stream</p>
-    </h1>
+    <div class="mx-auto my-5" align="center">
+        <h1>
+            <p class="h1"> SanBerry - Stream</p>
+        </h1>
 
-    <div class="my-3">
-        <img class="jsStreaming" src="resources/image2.jpg" style="width: 50%">
-    </div>
-    <div class="col-sm-6 bg-white rounded shadow">
-        <div class="col-sm-6 mx-auto rounded shadow">
-            <div class="form-group row">
-                <label class="col-sm-6 col-form-label">Status</label>
-                <div class="col-sm-3">
-                    <input type="text" readonly class="form-control-plaintext" id="statusValue" value="Good" style="text-align: center">
+        <div class="my-3">
+            <img class="jsStreaming" src="resources/image2.jpg" style="width: 50%">
+        </div>
+        <div class="col-sm-6 bg-white rounded shadow">
+            <div class="col-sm-6 mx-auto rounded shadow">
+                <div class="form-group row">
+                    <label class="col-sm-6 col-form-label">Status</label>
+                    <div class="col-sm-3">
+                        <input type="text" readonly class="form-control-plaintext" id="statusValue" value="Good" style="text-align: center">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="jsButtons py-2">
+                    <button type="button" class="btn btn-success btn-lg jsStreamBtn">Stream</button>
+                    <button type="button" class="btn btn-dark btn-lg jsGetDataBtn">Get Data</button>
                 </div>
             </div>
         </div>
-        <div>
-            <div class="jsButtons py-2">
-                <button type="button" class="btn btn-success btn-lg jsStreamBtn">Stream</button>
-                <button type="button" class="btn btn-dark btn-lg jsGetDataBtn">Get Data</button>
-            </div>
-        </div>
-        {#            <div>#}
-{#                <textarea class="form-control col-sm-5" rows="3"></textarea>#}
-{#            </div>#}
     </div>
-</div>
-
+    <script src="jsSanBerryStream.js"></script>
 </body>
+
 </html>

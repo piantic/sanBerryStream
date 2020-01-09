@@ -23,7 +23,14 @@ api = Api(app)
 
 @app.route('/')
 def index():
+    error = "Page Error"
     return render_template('sanBerryStream.html')
+
+
+@app.route('/<name>')
+def page(name=None):
+    error = "Page Error"
+    return render_template(name, error=error)
 
 @app.route('/resources')
 @app.route('/resources/<name>')
