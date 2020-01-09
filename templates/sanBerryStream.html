@@ -11,16 +11,32 @@
     </style>
 </head>
 <body>
-<div class="mx-auto" align="center" style="margin-top: 100px">
+<div class="mx-auto my-5" align="center">
     <h1>
         <p class="h1"> SanBerry - Stream</p>
     </h1>
 
-    <div class="jsStream">
-        <img src="resources/image2.jpg">
+    <div class="jsStream my-3">
+        <img src="resources/image2.jpg" style="width: 50%">
     </div>
-    <div>
-        <button type="button" class="btn btn-success btn-lg">Stream</button>
+    <div class="col-sm-6 bg-white rounded shadow">
+        <div class="col-sm-6 mx-auto rounded shadow">
+            <div class="form-group row">
+                <label class="col-sm-6 col-form-label">Status</label>
+                <div class="col-sm-3">
+                    <input type="text" readonly class="form-control-plaintext" id="motorValue" value="Good" style="text-align: center">
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="jsButtons py-2">
+                <button type="button" class="btn btn-success btn-lg">Stream</button>
+                <button type="button" class="btn btn-dark btn-lg">Get Data</button>
+            </div>
+        </div>
+        {#            <div>#}
+{#                <textarea class="form-control col-sm-5" rows="3"></textarea>#}
+{#            </div>#}
     </div>
 </div>
 
