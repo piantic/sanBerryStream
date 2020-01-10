@@ -1,7 +1,7 @@
-streaming = document.getElementsByClassName('.jsStreaming');
-status = document.getElementById('statusValue');
-btnStream = document.getElementsByClassName('jsStreamBtn');
-btnGetData = document.getElementsByClassName('jsGetDataBtn');
+streaming = document.querySelector('.jsStreaming');
+status = document.querySelector('.jsStatusValue');
+btnStream = document.querySelector('.jsStreamBtn');
+btnGetData = document.querySelector('.jsGetDataBtn');
 
 function startStream() {
     // fetch(

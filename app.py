@@ -26,6 +26,18 @@ def index():
     return render_template('sanBerryStream.html')
 
 
+@app.route('/favicon.ico')
+def favicon():
+    return ""
+
+
+@app.route('/page')
+@app.route('/page/<name>')
+def page(name=None):
+    error = "Page Error"
+    return render_template(name, error=error)
+
+
 @app.route('/resources')
 @app.route('/resources/<name>')
 def resource(name=None):
