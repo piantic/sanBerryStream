@@ -25,10 +25,12 @@ api = Api(app)
 def index():
     return render_template('sanBerryStream.html')
 
+
 @app.route('/resources')
 @app.route('/resources/<name>')
 def resource(name=None):
     ext = os.path.splitext(name)[1]
+    print(os.path.splitext(name))
     return send_file("resources/" + name, mimetype='image/%s' % ext)
 
 
@@ -45,7 +47,6 @@ def video_feed():
     """Video streaming route. Put this in the src attribute of an img tag."""
     return Response(gen(Camera()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
-
 
 
 if __name__ == '__main__':
