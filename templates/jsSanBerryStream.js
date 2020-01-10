@@ -19,11 +19,11 @@ function startStream() {
 
 function getData() {
     console.log("getData");
-    streaming.src = "/resources/image2.jpg";
+    streaming.src = "/resources/dummy.jpg";
 }
 
 function init() {
-    streaming.src = "/resources/image2.jpg";
+    streaming.src = "/resources/dummy.jpg";
 
     btnStream.addEventListener("click", startStream);
     btnGetData.addEventListener("click", getData);
