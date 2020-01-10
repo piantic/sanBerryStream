@@ -2,8 +2,10 @@ from importlib import import_module
 import os
 import cv2
 import sys
-from flask import Flask, render_template, send_file, Response, redirect
+from flask import Flask, render_template, send_file, Response, redirect, jsonify
 from flask_restful import Resource, Api
+from graphene import ObjectType, String, Schema
+from flask_graphql import GraphQLView
 
 # import camera driver
 # if os.environ.get('CAMERA'):
@@ -20,6 +22,42 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 api = Api(app)
 
+status = "bad"
+
+class Query(ObjectType):
+    hello = String(name=String(default_value="stranger"))
+    sanBerryStatus = String(name=String(default_value="Good"))
+    goodbye = String()
+
+    def resolve_hello(self, info, name):
+        if name == "jerry":
+            return f'{name} is god.'
+        return f'Hello {name}!'
+
+    def resolve_goodbye(self, info):
+        return 'See ya!'
+
+    def resolve_sanBerryStatus(self, info, name):
+        if name == "San":
+            return f"{name} is good."
+        elif name == "check":
+            return status
+        elif name == "jerry":
+            return f"{name} is god."
+        return f'Hello {name}!'
+
+
+schema = Schema(query=Query)
+
+app.add_url_rule(
+    '/graphql',
+    view_func=GraphQLView.as_view(
+        '/graphql',
+        schema=schema,
+        graphiql=True
+    )
+)
+
 
 @app.route('/')
 def index():
@@ -29,6 +67,18 @@ def index():
 @app.route('/favicon.ico')
 def favicon():
     return ""
+
+
+@app.route('/datInfo')
+@app.route('/datInfo/<query>')
+def datInfo(query=None):
+    #queryString = '{ hello }'
+    # queryString = '{ hello(name: "Jerry") }'
+    # result = schema.execute(queryString)
+    # print(result.data['hello'])
+    print(query)
+    result = schema.execute(query)
+    return jsonify(result.data)
 
 
 @app.route('/page')
