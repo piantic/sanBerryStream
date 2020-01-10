@@ -2,7 +2,7 @@ from importlib import import_module
 import os
 import cv2
 import sys
-from flask import Flask, render_template, send_file, Response
+from flask import Flask, render_template, send_file, Response, redirect
 from flask_restful import Resource, Api
 
 # import camera driver
@@ -23,7 +23,7 @@ api = Api(app)
 
 @app.route('/')
 def index():
-    return render_template('sanBerryStream.html')
+    return redirect('/page/sanBerryStream.html')
 
 
 @app.route('/favicon.ico')

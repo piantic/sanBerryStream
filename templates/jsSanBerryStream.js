@@ -17,12 +17,16 @@ function startStream() {
 
 }
 
-function nextPage(n) {
-
+function getData() {
+    console.log("getData");
+    streaming.src = "/resources/image2.jpg";
 }
 
 function init() {
+    streaming.src = "/resources/image2.jpg";
+
     btnStream.addEventListener("click", startStream);
+    btnGetData.addEventListener("click", getData);
 }
 
 init();
