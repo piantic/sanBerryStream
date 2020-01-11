@@ -38,6 +38,7 @@ function init() {
     streaming.src = "/resources/dummy.jpg";
     setStreamBtn(false);
 
+
     btnStream.addEventListener("click", startStream);
     btnStop.addEventListener("click", stopStream);
     btnGetData.addEventListener("click", getData);
