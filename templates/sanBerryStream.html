@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>SanBerry - Stream</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style type="text/css">
         h1, h2, li {
@@ -16,27 +16,27 @@
             <p class="h1"> SanBerry - Stream</p>
         </h1>
 
-        <div class="my-3">
-            <img class="jsStreaming" src="resources/image2.jpg" style="width: 50%">
+        <div class="col-sm-10 my-3">
+            <img class="jsStreaming" style="width: inherit">
         </div>
-        <div class="col-sm-6 py-3 bg-white rounded shadow">
-            <div class="col-sm-12 mx-auto rounded shadow">
+        <div class="col-sm-12 bg-white rounded shadow">
+            <div class="col-sm-10 mx-auto rounded shadow">
                 <div class="form-group row">
-                    <label class="col-sm-6 col-form-label">Status</label>
-                    <div class="col-sm-6">
-                        <input type="text" readonly class="form-control-plaintext" id="statusValue" value="Ready">
+                    <label class="col-sm-8 col-form-label">Status</label>
+                    <div class="col-sm-3">
+                        <input type="text" readonly class="form-control-plaintext jsStatusValue" value="Good" style="text-align: center">
                     </div>
                 </div>
             </div>
             <div>
                 <div class="jsButtons py-2">
-                    <button type="button" class="btn btn-success btn-lg jsStreamBtn">Stream</button>
-                    <button type="button" class="btn btn-dark btn-lg jsGetDataBtn">Stop</button>
+                    <button type="button" class="btn btn-primary btn-lg jsStreamBtn">Stream</button>
+                    <button type="button" class="btn btn-success btn-lg jsStopBtn">Stop</button>
+                    <button type="button" class="btn btn-dark btn-lg jsGetDataBtn">Get Data</button>
                 </div>
             </div>
         </div>
     </div>
     <script src="jsSanBerryStream.js"></script>
 </body>
-
 </html>
